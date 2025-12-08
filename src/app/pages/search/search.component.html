@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<app-search-bar (search)="doSearch($event)"></app-search-bar>
+
+<div class="results">
+  <div *ngFor="let tour of results">
+    <p>{{ tour.title }} - ${{ tour.price }}</p>
+  </div>
+</div>
+
+<app-footer></app-footer>

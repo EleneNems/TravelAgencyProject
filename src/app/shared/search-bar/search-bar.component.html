@@ -1,0 +1,49 @@
+<div class="search-box">
+
+  <div class="item">
+    <div class="icon">
+      <img src="search-bar/searchIcon.png" alt="search">
+    </div>
+    <div class="text">
+      <label>Search</label>
+      <input type="text" placeholder="Insert keyword" [formControl]="destination">
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="item">
+    <div class="icon">
+      <img src="search-bar/mapIcon.png" alt="location">
+    </div>
+    <div class="text">
+      <label>Destinations</label>
+      <select [formControl]="typology">
+        <option value="">All Destinations</option>
+        <option value="thailand">Thailand</option>
+        <option value="italy">Italy</option>
+        <option value="japan">Japan</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="item">
+    <div class="icon">
+      <img src="search-bar/earthIcon.png" alt="globe">
+    </div>
+    <div class="text">
+      <label>Typologies</label>
+      <select [formControl]="date">
+        <option value="">All Typologies</option>
+        <option value="adventure">Adventure</option>
+        <option value="culture">Culture</option>
+        <option value="nature">Nature</option>
+      </select>
+    </div>
+  </div>
+
+  <button class="submit-btn" (click)="submit()">SEARCH</button>
+
+</div>

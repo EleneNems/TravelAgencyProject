@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+<div *ngIf="tour; else loading">
+  <h1>{{ tour.title }}</h1>
+  <img *ngIf="tour.image" [src]="tour.image" alt="{{ tour.title }}" style="max-width:100%;height:auto;" />
+  <p>{{ tour.description }}</p>
+  <p><strong>Duration:</strong> {{ tour.duration }}</p>
+  <p><strong>Price:</strong> ${{ tour.price }}</p>
+</div>
+
+<ng-template #loading>
+  <p>Loading tour details...</p>
+</ng-template>
+
+<app-footer></app-footer>

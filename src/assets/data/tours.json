@@ -1,0 +1,108 @@
+[
+  {
+    "id": 1,
+    "title": "Chiang Mai",
+    "location": "Thailand",
+    "duration": "1 Week",
+    "price": 490,
+    "oldPrice": null,
+    "sale": false,
+    "image": "tour-card/Chiang Mai.png",
+    "description": "Visit temples and the Chiang Mai Night Bazaar.",
+    "typology": "adventure"
+  },
+  {
+    "id": 2,
+    "title": "Chao Phraya",
+    "location": "Thailand",
+    "duration": "5 Days",
+    "price": 98,
+    "oldPrice": 134,
+    "sale": true,
+    "image": "tour-card/Chao Phraya.png",
+    "description": "Boat tour in Bangkok exploring historic temples.",
+    "typology": "water"
+  },
+  {
+    "id": 3,
+    "title": "Bangkok",
+    "location": "Thailand",
+    "duration": "10 Days",
+    "price": 1000,
+    "oldPrice": 1023,
+    "sale": true,
+    "image": "tour-card/Bangkok.png",
+    "description": "Culinary and cultural trip through the Thai capital.",
+    "typology": "city"
+  },
+  {
+    "id": 7,
+    "title": "Malibu Escape",
+    "location": "USA",
+    "duration": "4 Days",
+    "price": 780,
+    "image": "assets/img/malibu.jpg",
+    "description": "Enjoy beaches, surfing and coastal luxury.",
+    "typology": "beach"
+  },
+  {
+    "id": 8,
+    "title": "Tokyo Lights",
+    "location": "Japan",
+    "duration": "6 Days",
+    "price": 1250,
+    "image": "assets/img/tokyo.jpg",
+    "description": "Experience futuristic city life, tech districts and nightlife.",
+    "typology": "city"
+  },
+  {
+    "id": 9,
+    "title": "Azure Coast",
+    "location": "France",
+    "duration": "5 Days",
+    "price": 1100,
+    "image": "assets/img/azure-coast.jpg",
+    "description": "Sunny beaches and charming Mediterranean towns.",
+    "typology": "beach"
+  },
+  {
+    "id": 10,
+    "title": "Rocamadour",
+    "location": "France",
+    "duration": "3 Days",
+    "price": 620,
+    "image": "assets/img/rocamadour.jpg",
+    "description": "Historic cliffside village with medieval beauty.",
+    "typology": "culture"
+  },
+  {
+    "id": 11,
+    "title": "Luxor",
+    "location": "Egypt",
+    "duration": "6 Days",
+    "price": 850,
+    "image": "assets/img/luxor.jpg",
+    "description": "Explore Valley of the Kings and ancient temples.",
+    "typology": "history"
+  },
+  {
+    "id": 12,
+    "title": "Cairo",
+    "location": "Egypt",
+    "duration": "4 Days",
+    "price": 770,
+    "image": "assets/img/cairo.jpg",
+    "description": "See the pyramids, Sphinx and traditional bazaars.",
+    "typology": "history"
+  },
+  {
+    "id": 13,
+    "title": "Tuscany",
+    "location": "Italy",
+    "duration": "7 Days",
+    "price": 1350,
+    "image": "assets/img/tuscany.jpg",
+    "description": "Wine tasting, countryside views and medieval cities.",
+    "typology": "culture"
+  }
+]

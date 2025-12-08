@@ -1,0 +1,33 @@
+<app-header></app-header>
+
+<div class="auth-container">
+  <h2>{{ mode === 'login' ? 'Login' : 'Register' }}</h2>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div *ngIf="mode === 'register'">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" placeholder="Full Name" />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" placeholder="Password" type="password" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      {{ mode === 'login' ? 'Login' : 'Register' }}
+    </button>
+
+    <button mat-button type="button" (click)="toggle()">
+      {{ mode === 'login' ? 'Switch to Register' : 'Switch to Login' }}
+    </button>
+  </form>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,11 @@
+.auth-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+mat-form-field {
+  width: 100%;
+  margin-bottom: 12px;
+}

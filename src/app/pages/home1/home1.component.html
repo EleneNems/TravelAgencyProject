@@ -1,0 +1,51 @@
+<section class="hero">
+  <div class="hero-content">
+    <span class="tag">LOVE TRAVEL THEME.</span>
+    <h1>
+      <strong>Adventure</strong> &<br />
+      Experience<br />
+      The Travel !
+    </h1>
+
+    <div class="search-wrapper">
+      <app-search-bar (search)="onSearch($event)"></app-search-bar>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <section class="intro">
+    <h4 class="sub-title">Dream Vacation Destination</h4>
+
+    <h2 class="title">Plan the Trip of a Lifetime with Ease</h2>
+
+    <p class="desc">
+      Whether you're looking for a romantic getaway, a family-friendly adventure, or a solo journey
+      to explore the world, a travel agency can provide you with a custom-tailored itinerary that
+      exceeds your expectations.
+    </p>
+
+    <button class="more-btn">More Info</button>
+  </section>
+
+  <section class="category-list">
+    <div class="category">
+      <img src="home1/Section1.png" alt="City Walks" class="cont" />
+      <img src="home1/Section1Icon.png" alt="City Walks" class="icon" />
+    </div>
+
+    <div class="category">
+      <img src="home1/Section2.png" alt="Electric Bikes" class="cont" />
+      <img src="home1/Section1Icon.png" alt="City Walks" class="icon" />
+    </div>
+
+    <div class="category">
+      <img src="home1/Section3.png" alt="Skyscrapers View" class="cont" />
+      <img src="home1/Section1Icon.png" alt="City Walks" class="icon" />
+    </div>
+  </section>
+
+  <section class="tour-grid">
+    <app-tour-card *ngFor="let t of tours | slice : 0 : 3; let i = index" [tour]="t" [index]="i">
+    </app-tour-card>
+  </section>
+</div>

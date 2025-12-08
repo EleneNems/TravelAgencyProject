@@ -1,0 +1,55 @@
+.header {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 4px #0001;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  gap: 50px;
+  margin-left: -65px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+nav a.active {
+  color: #1BBC9B;
+  font-weight: 600;
+}
+
+.search-btn {
+  position: absolute;
+  right: 140px;
+  background: #1BBC9B;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.search-btn:hover {
+  opacity: 0.85;
+}
+
+.dec {
+  color: #1BBC9B;
+  font-weight: bolder;
+}

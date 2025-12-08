@@ -1,0 +1,144 @@
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px 60px;
+}
+
+.tour-card {
+  width: 420px;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
+  padding-bottom: 20px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.tour-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Image */
+.card-image img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+}
+
+/* SALE badge */
+.sale-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Duration row */
+.card-info {
+  margin: 15px;
+  padding: 15px;
+  background: #f7f7f7;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-info img {
+  width: 18px;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Title */
+h2 {
+  margin: 15px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Location */
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -5px 15px 10px 15px;
+  color: #666;
+}
+
+.location img {
+  width: 16px;
+}
+
+/* Description */
+.desc {
+  margin: 0 15px 20px 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Bottom */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.details-btn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Price */
+.price {
+  font-size: 14px;
+}
+
+.price .new {
+  font-size: 22px;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+.price .old {
+  font-size: 16px;
+  text-decoration: line-through;
+  opacity: 0.5;
+  margin-left: 5px;
+}
+
+/* THEME CLASSES (explicit names to avoid collisions) */
+.theme-aqua .details-btn { background: #03c4a1; }
+.theme-aqua .sale-badge  { background: #03c4a1; }
+
+.theme-green .details-btn { background: #41a541; }
+.theme-green .sale-badge  { background: #41a541; }
+
+.theme-purple .details-btn { background: #8c53ff; }
+.theme-purple .sale-badge  { background: #8c53ff; }
+
+.theme-red .details-btn { background: #ff4b4b; }
+.theme-red .sale-badge  { background: #ff4b4b; }

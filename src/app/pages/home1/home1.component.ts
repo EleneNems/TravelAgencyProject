@@ -7,26 +7,44 @@ import { FooterComponent } from '../../layout/footer/footer.component';
 import { SearchBarComponent } from '../../shared/search-bar/search-bar.component';
 import { Router } from '@angular/router';
 import { TourCardComponent } from '../../shared/tour-card/tour-card.component';
+import { DestinationCardComponent } from '../../shared/destination-card/destination-card';
 
 @Component({
   selector: 'app-home1',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent, SearchBarComponent, TourCardComponent],
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    FooterComponent,
+    SearchBarComponent,
+    TourCardComponent,
+    DestinationCardComponent 
+  ],
   templateUrl: './home1.component.html',
   styleUrls: ['./home1.component.css']
 })
 export class Home1Component implements OnInit {
+  
   tours: Tour[] = [];
   featuredTours: Tour[] = [];
+
+  destinations: Tour[] = []; 
 
   constructor(private tourSvc: TourService, private router: Router) {}
 
   ngOnInit() {
-  this.tourSvc.getAll().subscribe(list => {
-    this.tours = list;
-    this.featuredTours = list.slice(0, 3); 
-  });
-}
+
+    this.tourSvc.getAll().subscribe(list => {
+      this.tours = list;
+      this.featuredTours = list.slice(0, 3);
+    });
+
+    fetch('assets/data/tours.json')
+      .then(res => res.json())
+      .then((data: Tour[]) => {
+        this.destinations = data.filter(t => [14, 15, 16, 17].includes(t.id));
+      });
+  }
 
   onSearch(query: string) {
     this.router.navigate(['/search'], { queryParams: { q: query } });

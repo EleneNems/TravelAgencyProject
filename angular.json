@@ -26,11 +26,6 @@
               },
               {
                 "glob": "**/*",
-                "input": "src/app/components/tour-card/icons",
-                "output": "public/tour-card/icons"
-              },
-              {
-                "glob": "**/*",
                 "input": "public",
                 "output": ""
               }

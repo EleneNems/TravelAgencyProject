@@ -1,18 +1,6 @@
 [
   {
     "id": 1,
-    "title": "Chiang Mai",
-    "location": "Thailand",
-    "duration": "1 Week",
-    "price": 490,
-    "oldPrice": null,
-    "sale": false,
-    "image": "tour-card/Chiang Mai.png",
-    "description": "Visit temples and the Chiang Mai Night Bazaar.",
-    "typology": "adventure"
-  },
-  {
-    "id": 2,
     "title": "Chao Phraya",
     "location": "Thailand",
     "duration": "5 Days",
@@ -20,8 +8,20 @@
     "oldPrice": 134,
     "sale": true,
     "image": "tour-card/Chao Phraya.png",
-    "description": "Boat tour in Bangkok exploring historic temples.",
+    "description": "Boat tour in the capital of Thailand, Bangkok, to see the beautiful palaces and monuments from the water.",
     "typology": "water"
+  },
+  {
+    "id": 2,
+    "title": "Chiang Mai",
+    "location": "Thailand",
+    "duration": "1 Week",
+    "price": 490,
+    "oldPrice": null,
+    "sale": false,
+    "image": "tour-card/Chiang Mai.png",
+    "description": "Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.",
+    "typology": "adventure"
   },
   {
     "id": 3,
@@ -32,8 +32,44 @@
     "oldPrice": 1023,
     "sale": true,
     "image": "tour-card/Bangkok.png",
-    "description": "Culinary and cultural trip through the Thai capital.",
+    "description": "Marvelous culinary and cultural trip to the Thai capital with its wonderful monuments and Buddha statues.",
     "typology": "city"
+  },
+  {
+    "id": 4,
+    "title": "Paris Getaway",
+    "location": "France",
+    "duration": "5 Days",
+    "price": 1150,
+    "oldPrice": 1280,
+    "sale": true,
+    "image": "tour-card/Paris.png",
+    "description": "Romantic trip through the City of Lights, with visits to the Eiffel Tower, Louvre Museum and charming cafés.",
+    "typology": "city"
+  },
+  {
+    "id": 5,
+    "title": "Nice Riviera",
+    "location": "France",
+    "duration": "6 Days",
+    "price": 990,
+    "oldPrice": null,
+    "sale": false,
+    "image": "tour-card/Nice.png",
+    "description": "Relax along the beautiful Azure Coast, explore old towns, beaches and the Mediterranean lifestyle.",
+    "typology": "beach"
+  },
+  {
+    "id": 6,
+    "title": "Lyon Heritage Tour",
+    "location": "France",
+    "duration": "4 Days",
+    "price": 860,
+    "oldPrice": 910,
+    "sale": true,
+    "image": "tour-card/Lyon.png",
+    "description": "Discover the medieval architecture, delicious cuisine and unique cultural atmosphere of Lyon.",
+    "typology": "culture"
   },
   {
     "id": 7,
@@ -103,6 +139,54 @@
     "price": 1350,
     "image": "assets/img/tuscany.jpg",
     "description": "Wine tasting, countryside views and medieval cities.",
+    "typology": "culture"
+  },
+  {
+    "id": 14,
+    "title": "Santorini Escape",
+    "location": "Greece",
+    "duration": "6 Days",
+    "price": 980,
+    "oldPrice": 1120,
+    "sale": true,
+    "image": "tour-card/Greece.jpg",
+    "description": "Enjoy breathtaking sunsets, white-washed villages, crystal-blue waters and the iconic Caldera views of Santorini.",
+    "typology": "beach"
+  },
+  {
+    "id": 15,
+    "title": "Alexandria Coastline Tour",
+    "location": "Egypt",
+    "duration": "5 Days",
+    "price": 720,
+    "oldPrice": null,
+    "sale": false,
+    "image": "tour-card/Egypt.jpg",
+    "description": "Discover ancient wonders, Mediterranean beaches, the Citadel of Qaitbay and historic libraries of Alexandria.",
+    "typology": "history"
+  },
+  {
+    "id": 16,
+    "title": "Cape Town Adventure",
+    "location": "South Africa",
+    "duration": "7 Days",
+    "price": 1400,
+    "oldPrice": 1580,
+    "sale": true,
+    "image": "tour-card/South Africa.jpg",
+    "description": "Experience Table Mountain, wildlife safaris, beaches and cultural hotspots in vibrant Cape Town.",
+    "typology": "adventure"
+  },
+  {
+    "id": 17,
+    "title": "Provence Countryside",
+    "location": "France",
+    "duration": "5 Days",
+    "price": 1050,
+    "oldPrice": null,
+    "sale": false,
+    "image": "tour-card/Provence France.jpg",
+    "description": "Explore lavender fields, vineyards, charming villages and the warm Mediterranean atmosphere of Provence.",
     "typology": "culture"
   }
 ]

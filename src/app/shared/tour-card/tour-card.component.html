@@ -1,10 +1,5 @@
-<!-- note: themeClass is applied here -->
 <div class="tour-card" [ngClass]="themeClass">
-
-  <!-- SALE Badge -->
-  <div class="sale-badge" *ngIf="tour?.sale">
-    SALE
-  </div>
+  <div class="sale-badge" *ngIf="tour?.sale">SALE</div>
 
   <div class="card-image">
     <img [src]="tour?.image" alt="{{ tour?.title }}" />
@@ -12,32 +7,36 @@
 
   <div class="card-info">
     <div class="duration">
-      <img [src]="'tour-card/icons/' + themeClass.replace('theme-','') + '/time.png'" alt="time">
+      <img [src]="'tour-card/icons/' + themeClass.replace('theme-', '') + '/time.png'" alt="time" />
       {{ tour?.duration }}
     </div>
 
     <div class="icons">
-      <img [src]="'tour-card/icons/' + themeClass.replace('theme-','') + '/email.png'" alt="email">
-      <img [src]="'tour-card/icons/' + themeClass.replace('theme-','') + '/map.png'" alt="map">
+      <img
+        [src]="'tour-card/icons/' + themeClass.replace('theme-', '') + '/email.png'"
+        alt="email"
+      />
+      <img [src]="'tour-card/icons/' + themeClass.replace('theme-', '') + '/map.png'" alt="map" />
     </div>
   </div>
 
   <h2>{{ tour?.title }}</h2>
 
   <div class="location">
-    <img [src]="'tour-card/icons/' + themeClass.replace('theme-','') + '/destination.png'" alt="destination">
+    <img
+      [src]="'tour-card/icons/' + themeClass.replace('theme-', '') + '/destination.png'"
+      alt="destination"
+    />
     {{ tour?.location }}
   </div>
-
+  <hr />
   <p class="desc">{{ tour?.description }}</p>
-
+  <hr />
   <div class="bottom">
-    <button class="details-btn" (click)="go()">
-      Details
-    </button>
+    <button class="details-btn" (click)="go()">Details</button>
 
     <div class="price">
-      From <span class="new">${{ tour?.price }}</span>
+      <br><span class="new">${{ tour?.price }}</span>
       <span class="old" *ngIf="tour?.sale">${{ tour?.oldPrice }}</span>
     </div>
   </div>

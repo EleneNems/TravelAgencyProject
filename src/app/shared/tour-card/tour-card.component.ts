@@ -25,13 +25,11 @@ export class TourCardComponent implements OnChanges {
 
   readonly colors = ["aqua", "green", "purple", "red"];
 
-  // computed theme class, e.g. 'theme-aqua'
   public themeClass = 'theme-aqua';
 
   constructor(private router: Router) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    // compute themeClass once whenever inputs change
     this.themeClass = this.computeThemeClass();
     console.debug('Tour', this.tour?.title, 'index', this.index, 'theme', this.themeClass);
   }
@@ -43,7 +41,6 @@ export class TourCardComponent implements OnChanges {
   }
 
   private computeThemeClass(): string {
-    // 1) if tour explicitly contains color, use it (and normalize)
     if (this.tour && (this.tour as any).color) {
       const c = String((this.tour as any).color).toLowerCase();
       if (this.colors.includes(c)) {
@@ -51,7 +48,6 @@ export class TourCardComponent implements OnChanges {
       }
     }
 
-    // 2) fallback: use index rotation
     const idx = Math.max(0, Math.floor(this.index || 0));
     const color = this.colors[idx % this.colors.length];
     return `theme-${color}`;

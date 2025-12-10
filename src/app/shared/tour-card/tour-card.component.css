@@ -7,8 +7,9 @@
 
 .tour-card {
   width: 420px;
+  height: 660px;
   background: #fff;
-  border-radius: 22px;
+  border-radius: 15px 15px 0 0;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   overflow: hidden;
   padding-bottom: 20px;
@@ -20,36 +21,36 @@
   transform: translateY(-4px);
 }
 
-/* Image */
 .card-image img {
   width: 100%;
   height: 260px;
   object-fit: cover;
-  border-top-left-radius: 22px;
-  border-top-right-radius: 22px;
 }
 
-/* SALE badge */
 .sale-badge {
   position: absolute;
   top: 18px;
+  width: 64px;
+  height: 24px;
   right: 18px;
-  padding: 8px 16px;
-  border-radius: 30px;
+  border-radius: 15px;
   color: white;
+  padding: 2px;
+  box-sizing: border-box;
+  text-align: center;
   font-size: 14px;
-  font-weight: 600;
 }
 
-/* Duration row */
 .card-info {
-  margin: 15px;
+  margin: 20px;
   padding: 15px;
-  background: #f7f7f7;
+  background: white;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0px 0px 15px 0px #0000001A;
+
 }
 
 .card-info img {
@@ -68,19 +69,17 @@
   gap: 14px;
 }
 
-/* Title */
 h2 {
-  margin: 15px;
+  margin: 30px;
   font-size: 22px;
   font-weight: 700;
 }
 
-/* Location */
 .location {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: -5px 15px 10px 15px;
+  margin: -16px 15px 10px 30px;
   color: #666;
 }
 
@@ -88,37 +87,48 @@ h2 {
   width: 16px;
 }
 
-/* Description */
-.desc {
-  margin: 0 15px 20px 15px;
-  color: #555;
-  line-height: 1.5;
+hr{
+  width: 340px;
+  margin-top: 25px;
+  height: 1px;
+  background-color: #E4E4E4;
+  border: none;
 }
 
-/* Bottom */
+.desc {
+  margin: 30px 15px 30px 30px;
+  color: #6E6E6E;
+  line-height: 1.5;
+  width: 340px;
+  font-size: 16px;
+}
+
 .bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 15px;
+  margin: 25px 15px 0 30px;
 }
 
 .details-btn {
   padding: 10px 25px;
   border: none;
-  border-radius: 10px;
+  width: 110px;
+  height: 40px;
+  border-radius: 5px;
   color: white;
   font-weight: 600;
   cursor: pointer;
 }
 
-/* Price */
 .price {
+  margin-top: -5px;
   font-size: 14px;
+  margin-right: 20px;
 }
 
 .price .new {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 700;
   margin-left: 8px;
 }
@@ -128,17 +138,17 @@ h2 {
   text-decoration: line-through;
   opacity: 0.5;
   margin-left: 5px;
+  margin-right: 10px;
 }
 
-/* THEME CLASSES (explicit names to avoid collisions) */
-.theme-aqua .details-btn { background: #03c4a1; }
-.theme-aqua .sale-badge  { background: #03c4a1; }
+.theme-aqua .details-btn { background: #14B9D5; }
+.theme-aqua .sale-badge  { background: #14B9D5; }
 
-.theme-green .details-btn { background: #41a541; }
-.theme-green .sale-badge  { background: #41a541; }
+.theme-green .details-btn { background: #1BBC9B; }
+.theme-green .sale-badge  { background: #1BBC9B; }
 
-.theme-purple .details-btn { background: #8c53ff; }
-.theme-purple .sale-badge  { background: #8c53ff; }
+.theme-purple .details-btn { background: #BA71DA; }
+.theme-purple .sale-badge  { background: #BA71DA; }
 
-.theme-red .details-btn { background: #ff4b4b; }
-.theme-red .sale-badge  { background: #ff4b4b; }
+.theme-red .details-btn { background: #F76570; }
+.theme-red .sale-badge  { background: #F76570; }

@@ -1,342 +1,349 @@
-<section class="hero">
-  <div class="hero-content">
-    <span class="tag">LOVE TRAVEL THEME.</span>
-    <h1>
-      <strong>Adventure</strong> &<br />
-      Experience<br />
-      The Travel !
-    </h1>
+<div class="allcont">
+  <section class="hero">
+    <div class="hero-content">
+      <span class="tag">LOVE TRAVEL THEME.</span>
+      <h1>
+        <strong>Adventure</strong> &<br />
+        Experience<br />
+        The Travel !
+      </h1>
+
+      <div class="search-wrapper">
+        <app-search-bar (search)="onSearch($event)"></app-search-bar>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <section class="intro">
+      <h4 class="sub-title">Dream Vacation Destination</h4>
+
+      <h2 class="title">Plan the Trip of a Lifetime with Ease</h2>
+
+      <p class="desc">
+        Whether you're looking for a romantic getaway, a family-friendly adventure, or a solo
+        journey to explore the world, a travel agency can provide you with a custom-tailored
+        itinerary that exceeds your expectations.
+      </p>
+
+      <button class="more-btn">More Info</button>
+    </section>
+
+    <section class="category-list">
+      <div class="category">
+        <img src="home1/Section1.png" alt="City Walks" class="cont" />
+        <img src="home1/Section1Icon.png" alt="City Walks" class="icon" />
+      </div>
+
+      <div class="category">
+        <img src="home1/Section2.png" alt="Electric Bikes" class="cont" />
+        <img src="home1/Section1Icon.png" alt="City Walks" class="icon" />
+      </div>
+
+      <div class="category">
+        <img src="home1/Section3.png" alt="Skyscrapers View" class="cont" />
+        <img src="home1/Section1Icon.png" alt="City Walks" class="icon" />
+      </div>
+    </section>
+
+    <section class="tour-grid">
+      <app-tour-card *ngFor="let t of tours | slice : 0 : 3; let i = index" [tour]="t" [index]="i">
+      </app-tour-card>
+    </section>
+  </div>
+  <div class="gray_cont">
+    <p class="lil-title">Choose your Trip</p>
+    <h1>Start your Vacation Now</h1>
+    <p class="gray_desc">
+      Looking for your dream vacation destination but don't know where to start? With the help
+      <br /><br />
+      of experienced and knowledgeable travel agents, you can plan the trip of a lifetime with ease.
+    </p>
 
     <div class="search-wrapper">
       <app-search-bar (search)="onSearch($event)"></app-search-bar>
     </div>
   </div>
-</section>
-<div class="container">
-  <section class="intro">
-    <h4 class="sub-title">Dream Vacation Destination</h4>
 
-    <h2 class="title">Plan the Trip of a Lifetime with Ease</h2>
-
-    <p class="desc">
-      Whether you're looking for a romantic getaway, a family-friendly adventure, or a solo journey
-      to explore the world, a travel agency can provide you with a custom-tailored itinerary that
-      exceeds your expectations.
+  <div class="adventure-cont">
+    <p class="lil-title">Next Adventure</p>
+    <h1>
+      Travel Destinations <br />
+      Available Worldwide
+    </h1>
+    <p class="gray_desc1">
+      We have compiled a list of top destinations across the globe, scoured the world for the most
+      alluring and fascinating places to visit. From the beautiful beaches of the Caribbean to the
+      majestic mountains of Europe and the vibrant cities of Asia, our destination list has
+      something for everyone.
     </p>
 
-    <button class="more-btn">More Info</button>
-  </section>
+    <section class="destinations-section">
+      <div class="dest-grid">
+        <app-destination-card *ngFor="let dest of destinations" [destination]="dest">
+        </app-destination-card>
+      </div>
+    </section>
+  </div>
 
-  <section class="category-list">
-    <div class="category">
-      <img src="home1/Section1.png" alt="City Walks" class="cont" />
-      <img src="home1/Section1Icon.png" alt="City Walks" class="icon" />
+  <section class="adventure-highlight">
+    <div class="adventure-image">
+      <img src="home1/bamboo.png" alt="Bamboo Forest" />
     </div>
 
-    <div class="category">
-      <img src="home1/Section2.png" alt="Electric Bikes" class="cont" />
-      <img src="home1/Section1Icon.png" alt="City Walks" class="icon" />
-    </div>
+    <div class="adventure-text">
+      <p class="mini-label">Adventure Travel</p>
 
-    <div class="category">
-      <img src="home1/Section3.png" alt="Skyscrapers View" class="cont" />
-      <img src="home1/Section1Icon.png" alt="City Walks" class="icon" />
-    </div>
-  </section>
+      <h2>Embrace the Thrill of<br /><span>the Unknown</span></h2>
 
-  <section class="tour-grid">
-    <app-tour-card *ngFor="let t of tours | slice : 0 : 3; let i = index" [tour]="t" [index]="i">
-    </app-tour-card>
-  </section>
-</div>
-<div class="gray_cont">
-  <p class="lil-title">Choose your Trip</p>
-  <h1>Start your Vacation Now</h1>
-  <p class="gray_desc">
-    Looking for your dream vacation destination but don't know where to start? With the help
-    <br /><br />
-    of experienced and knowledgeable travel agents, you can plan the trip of a lifetime with ease.
-  </p>
-
-  <div class="search-wrapper">
-    <app-search-bar (search)="onSearch($event)"></app-search-bar>
-  </div>
-</div>
-
-<div class="adventure-cont">
-  <p class="lil-title">Next Adventure</p>
-  <h1>
-    Travel Destinations <br />
-    Available Worldwide
-  </h1>
-  <p class="gray_desc1">
-    We have compiled a list of top destinations across the globe, scoured the world for the most
-    alluring and fascinating places to visit. From the beautiful beaches of the Caribbean to the
-    majestic mountains of Europe and the vibrant cities of Asia, our destination list has something
-    for everyone.
-  </p>
-
-  <section class="destinations-section">
-    <div class="dest-grid">
-      <app-destination-card *ngFor="let dest of destinations" [destination]="dest">
-      </app-destination-card>
-    </div>
-  </section>
-</div>
-
-<section class="adventure-highlight">
-  <div class="adventure-image">
-    <img src="home1/bamboo.png" alt="Bamboo Forest" />
-  </div>
-
-  <div class="adventure-text">
-    <p class="mini-label">Adventure Travel</p>
-
-    <h2>Embrace the Thrill of<br /><span>the Unknown</span></h2>
-
-    <p class="adv-desc">
-      Are you tired of the typical tourist destinations and looking to step out of your comfort
-      zone? Adventure travel may be the perfect solution for you. Here are four reasons why you
-      should book an adventure travel experience:
-    </p>
-
-    <ul class="checklist">
-      <li>✓ Connect with nature</li>
-      <hr />
-      <li>✓ Experience other cultures</li>
-      <hr />
-      <li>✓ Create unforgettable memories</li>
-    </ul>
-
-    <button class="adv-btn">All Services</button>
-  </div>
-</section>
-
-<section class="travel-itineraries">
-  <h1>Travel Itineraries</h1>
-
-  <div class="video-box">
-    <img src="home1/arc-de-triomphe.png" alt="Paris Travel Video" />
-  </div>
-
-  <div class="brand-row">
-    <img src="home1/brands/brand1.png" />
-    <img src="home1/brands/brand2.png" />
-    <img src="home1/brands/brand3.png" />
-    <img src="home1/brands/brand4.png" />
-    <img src="home1/brands/brand5.png" />
-  </div>
-</section>
-
-<section class="testimonial-hero">
-  <img src="home1/great-wall.jpg" class="hero-bg" alt="Great Wall" />
-
-  <div class="hero-inner">
-    <div class="hero-text">
-      <h2>Unforgettable Travel Experiences</h2>
-      <p>
-        Our customer's feedback is essential in building a great reputation and maintaining
-        excellent service. By listening to our customer's needs, we can improve our offerings and
-        provide an exceptional travel experience.
+      <p class="adv-desc">
+        Are you tired of the typical tourist destinations and looking to step out of your comfort
+        zone? Adventure travel may be the perfect solution for you. Here are four reasons why you
+        should book an adventure travel experience:
       </p>
+
+      <ul class="checklist">
+        <li>✓ Connect with nature</li>
+        <hr />
+        <li>✓ Experience other cultures</li>
+        <hr />
+        <li>✓ Create unforgettable memories</li>
+      </ul>
+
+      <button class="adv-btn">All Services</button>
+    </div>
+  </section>
+
+  <section class="travel-itineraries">
+    <h1>Travel Itineraries</h1>
+
+    <div class="video-box">
+      <img src="home1/arc-de-triomphe.png" alt="Paris Travel Video" />
     </div>
 
-    <div class="testimonial-row">
-      <div class="testimonial-card">
-        <p>
-          My husband and I have been using this travel agency for years and they have never
-          disappointed us.
-        </p>
+    <div class="brand-row">
+      <img src="home1/brands/brand1.png" />
+      <img src="home1/brands/brand2.png" />
+      <img src="home1/brands/brand3.png" />
+      <img src="home1/brands/brand4.png" />
+      <img src="home1/brands/brand5.png" />
+    </div>
+  </section>
 
-        <div class="user">
-          <img src="home1/profile2.jpg" />
-          <div>
-            <strong>Jennifer and Mark</strong>
-            <br />
-            <span>San Francisco</span>
-          </div>
-        </div>
+  <section class="testimonial-hero">
+    <img src="home1/great-wall.jpg" class="hero-bg" alt="Great Wall" />
+
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h2>Unforgettable Travel Experiences</h2>
+        <p>
+          Our customer's feedback is essential in building a great reputation and maintaining
+          excellent service. By listening to our customer's needs, we can improve our offerings and
+          provide an exceptional travel experience.
+        </p>
       </div>
 
-      <div class="testimonial-card">
-        <p>
-          This travel agency made my dream trip to Europe a reality. They worked with me every step
-          of the way to plan the itinerary.
-        </p>
+      <div class="testimonial-row">
+        <div class="testimonial-card">
+          <p>
+            My husband and I have been using this travel agency for years and they have never
+            disappointed us.
+          </p>
 
-        <div class="user">
-          <img src="home1/profile1.jpg" />
-          <div>
-            <strong>Dylan and Emily</strong>
-            <br />
+          <div class="user">
+            <img src="home1/profile2.jpg" />
+            <div>
+              <strong>Jennifer and Mark</strong>
+              <br />
+              <span>San Francisco</span>
+            </div>
+          </div>
+        </div>
 
-            <span>Miami</span>
+        <div class="testimonial-card">
+          <p>
+            This travel agency made my dream trip to Europe a reality. They worked with me every
+            step of the way to plan the itinerary.
+          </p>
+
+          <div class="user">
+            <img src="home1/profile1.jpg" />
+            <div>
+              <strong>Dylan and Emily</strong>
+              <br />
+
+              <span>Miami</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="pricing-section">
-  <span class="price-mini">Clear Price</span>
-  <h2>Affordable Travel Packages</h2>
+  </section>
+  <section class="pricing-section">
+    <span class="price-mini">Clear Price</span>
+    <h2>Affordable Travel Packages</h2>
 
-  <p class="price-desc">
-    We believe that everyone deserves to experience their dream vacation without breaking the bank.
-    That's why we offer a price section on our website that features a range of affordable travel
-  </p>
+    <p class="price-desc">
+      We believe that everyone deserves to experience their dream vacation without breaking the
+      bank. That's why we offer a price section on our website that features a range of affordable
+      travel
+    </p>
 
-  <div class="price-grid">
-    <div class="price-card light">
-      <h3>Half Board</h3>
-      <h1>$50 <span>/Day</span></h1>
+    <div class="price-grid">
+      <div class="price-card light">
+        <h3>Half Board</h3>
+        <h1>$50 <span>/Day</span></h1>
 
-      <ul>
-        <li>Transfers from Airport</li>
-        <li>Minimum 3 Star Hotel</li>
-        <li>Alcoholic beverages</li>
-        <li>Incl. Museum Tickets</li>
-        <li>Meals in Restaurants</li>
-      </ul>
+        <ul>
+          <li>Transfers from Airport</li>
+          <li>Minimum 3 Star Hotel</li>
+          <li>Alcoholic beverages</li>
+          <li>Incl. Museum Tickets</li>
+          <li>Meals in Restaurants</li>
+        </ul>
 
-      <button>VIEW TRIPS</button>
-    </div>
-
-    <div class="price-card green">
-      <h3>All Inclusive</h3>
-      <h1>$32 <span>/Day</span></h1>
-
-      <ul>
-        <li>Meals in Restaurants</li>
-        <li>Alcoholic beverages</li>
-        <li>Minimum 3 Star Hotel</li>
-        <li>Transfers from Airport</li>
-        <li>Incl. Museum Tickets</li>
-      </ul>
-
-      <button class="dark">VIEW ALL</button>
-    </div>
-
-    <div class="price-card dark">
-      <span class="badge">POPULAR</span>
-      <h3>Excursions Included</h3>
-      <h1>$68 <span>/Day</span></h1>
-
-      <ul>
-        <li>Minimum 3 Star Hotel</li>
-        <li>Meals in Restaurants</li>
-        <li>Incl. Museum Tickets</li>
-        <li>Meals in Restaurants</li>
-        <li>Alcoholic beverages</li>
-      </ul>
-
-      <button>BUTTON</button>
-    </div>
-  </div>
-
-  <p class="note">* All trips include medical insurance</p>
-</section>
-
-<section class="discover">
-  <div class="wrapping">
-    <div class="discover-content">
-      <span class="handwritten">Wandering Souls</span>
-
-      <h1>Discover Your Next<br />Adventure</h1>
-
-      <p class="desc">
-        Whether you're planning a romantic honeymoon or a family vacation, our price section has got
-        you covered. So start browsing today and find the perfect vacation package at a price that
-        won't leave you feeling guilty.
-      </p>
-
-      <div class="progress-group">
-        <div class="progress-item">
-          <span>Organized Group Tour</span>
-          <div class="line full"></div>
-        </div>
-
-        <div class="progress-item">
-          <span>Single Customized Trip</span>
-          <div class="line half"></div>
-        </div>
+        <button>VIEW TRIPS</button>
       </div>
 
-      <button class="discover-btn">MORE INFO</button>
-    </div>
+      <div class="price-card green">
+        <h3>All Inclusive</h3>
+        <h1>$32 <span>/Day</span></h1>
 
-    <img src="home1/photo2.jpg" alt="Discover background" class="discover-img" />
-  </div>
-</section>
+        <ul>
+          <li>Meals in Restaurants</li>
+          <li>Alcoholic beverages</li>
+          <li>Minimum 3 Star Hotel</li>
+          <li>Transfers from Airport</li>
+          <li>Incl. Museum Tickets</li>
+        </ul>
 
-<section class="blog">
-  <span class="handwritten center">Running Tales</span>
-  <h2>Travel Blog</h2>
-
-  <p class="blog-desc">
-    We share our experiences, tips and travel stories to inspire and guide our readers in their own
-    wanderlust adventures. From hidden gems to popular destinations, we showcase the beauty and
-    diversity of the world, and promote responsible and sustainable travel.
-  </p>
-
-  <div class="blog-layout">
-    <div class="blog-feature">
-      <img src="home1/photo1.jpg" alt="Blog image" />
-
-      <span class="date-dark">April 7, 2023</span>
-
-      <h3>Plan the Perfect Vacation</h3>
-
-      <p>
-        Planning a vacation can be overwhelming, but this post offers a step-by-step guide to help
-        readers create a comprehensive travel itinerary. From choosing a destination to booking
-        accommodations and activities, readers will learn how to plan a stress-free and enjoyable
-        trip.
-      </p>
-
-      <button class="read-btn">Read More</button>
-    </div>
-
-    <div class="blog-list">
-      <div class="blog-row">
-        <img src="home1/photo3.jpg" alt="Blog thumb" class="blog-thumb" />
-        <div class="blog-row-content">
-          <span class="date">April 7, 2023</span>
-          <h4>Discover the Hidden Gems</h4>
-          <p>
-            Benefits of traveling alone, from the freedom to discover new places with new friends.
-          </p>
-        </div>
+        <button class="dark">VIEW ALL</button>
       </div>
 
-      <div class="blog-row">
-        <img src="home1/photo4.jpg" alt="Blog thumb" class="blog-thumb" />
-        <div class="blog-row-content">
-          <span class="date">April 7, 2023</span>
-          <h4>Must-See Landmarks</h4>
-          <p>
-            Iconic landmarks that make Europe one of the world’s most popular travel destinations.
-          </p>
-        </div>
-      </div>
+      <div class="price-card dark">
+        <span class="badge">POPULAR</span>
+        <h3>Excursions Included</h3>
+        <h1>$68 <span>/Day</span></h1>
 
-      <div class="blog-row">
-        <img src="home1/photo5.jpg" alt="Blog thumb" class="blog-thumb" />
-        <div class="blog-row-content">
-          <span class="date">April 7, 2023</span>
-          <h4>Traveling on a Budget</h4>
-          <p>Practical advice for travelers who want to see the world without breaking the bank.</p>
-        </div>
-      </div>
+        <ul>
+          <li>Minimum 3 Star Hotel</li>
+          <li>Meals in Restaurants</li>
+          <li>Incl. Museum Tickets</li>
+          <li>Meals in Restaurants</li>
+          <li>Alcoholic beverages</li>
+        </ul>
 
-      <div class="blog-row">
-        <img src="home1/photo6.jpg" alt="Blog thumb" class="blog-thumb" />
-        <div class="blog-row-content">
-          <span class="date">April 7, 2023</span>
-          <h4>Explore the Wonders</h4>
-          <p>Must-see destinations and experiences, including wildlife and cultural experiences.</p>
-        </div>
+        <button>BUTTON</button>
       </div>
     </div>
-  </div>
-</section>
+
+    <p class="note">* All trips include medical insurance</p>
+  </section>
+
+  <section class="discover">
+    <div class="wrapping">
+      <div class="discover-content">
+        <span class="handwritten">Wandering Souls</span>
+
+        <h1>Discover Your Next<br />Adventure</h1>
+
+        <p class="desc">
+          Whether you're planning a romantic honeymoon or a family vacation, our price section has
+          got you covered. So start browsing today and find the perfect vacation package at a price
+          that won't leave you feeling guilty.
+        </p>
+
+        <div class="progress-group">
+          <div class="progress-item">
+            <span>Organized Group Tour</span>
+            <div class="line full"></div>
+          </div>
+
+          <div class="progress-item">
+            <span>Single Customized Trip</span>
+            <div class="line half"></div>
+          </div>
+        </div>
+
+        <button class="discover-btn">MORE INFO</button>
+      </div>
+
+      <img src="home1/photo2.jpg" alt="Discover background" class="discover-img" />
+    </div>
+  </section>
+
+  <section class="blog">
+    <span class="handwritten center">Running Tales</span>
+    <h2>Travel Blog</h2>
+
+    <p class="blog-desc">
+      We share our experiences, tips and travel stories to inspire and guide our readers in their
+      own wanderlust adventures. From hidden gems to popular destinations, we showcase the beauty
+      and diversity of the world, and promote responsible and sustainable travel.
+    </p>
+
+    <div class="blog-layout">
+      <div class="blog-feature">
+        <img src="home1/photo1.jpg" alt="Blog image" />
+
+        <span class="date-dark">April 7, 2023</span>
+
+        <h3>Plan the Perfect Vacation</h3>
+
+        <p>
+          Planning a vacation can be overwhelming, but this post offers a step-by-step guide to help
+          readers create a comprehensive travel itinerary. From choosing a destination to booking
+          accommodations and activities, readers will learn how to plan a stress-free and enjoyable
+          trip.
+        </p>
+
+        <button class="read-btn">Read More</button>
+      </div>
+
+      <div class="blog-list">
+        <div class="blog-row">
+          <img src="home1/photo3.jpg" alt="Blog thumb" class="blog-thumb" />
+          <div class="blog-row-content">
+            <span class="date">April 7, 2023</span>
+            <h4>Discover the Hidden Gems</h4>
+            <p>
+              Benefits of traveling alone, from the freedom to discover new places with new friends.
+            </p>
+          </div>
+        </div>
+
+        <div class="blog-row">
+          <img src="home1/photo4.jpg" alt="Blog thumb" class="blog-thumb" />
+          <div class="blog-row-content">
+            <span class="date">April 7, 2023</span>
+            <h4>Must-See Landmarks</h4>
+            <p>
+              Iconic landmarks that make Europe one of the world’s most popular travel destinations.
+            </p>
+          </div>
+        </div>
+
+        <div class="blog-row">
+          <img src="home1/photo5.jpg" alt="Blog thumb" class="blog-thumb" />
+          <div class="blog-row-content">
+            <span class="date">April 7, 2023</span>
+            <h4>Traveling on a Budget</h4>
+            <p>
+              Practical advice for travelers who want to see the world without breaking the bank.
+            </p>
+          </div>
+        </div>
+
+        <div class="blog-row">
+          <img src="home1/photo6.jpg" alt="Blog thumb" class="blog-thumb" />
+          <div class="blog-row-content">
+            <span class="date">April 7, 2023</span>
+            <h4>Explore the Wonders</h4>
+            <p>
+              Must-see destinations and experiences, including wildlife and cultural experiences.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

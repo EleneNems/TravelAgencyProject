@@ -3,37 +3,54 @@
     "id": 1,
     "title": "Chao Phraya",
     "location": "Thailand",
-    "duration": "5 Days",
+    "duration": 7,
     "price": 98,
     "oldPrice": 134,
     "sale": true,
+    "category": "Adventure Travel",
+    "categoryColor": "#FFB400",
+    "rating": 4.8,
+    "reviewsCount": 128,
     "image": "tour-card/Chao Phraya.png",
-    "description": "Boat tour in the capital of Thailand, Bangkok, to see the beautiful palaces and monuments from the water.",
-    "typology": "water"
+    "gallery": [],
+    "shortDescription": "Boat tour in the capital of Thailand",
+    "description": "Boat tour in the capital of Thailand, Bangkok, to see the beautiful palaces and monuments from the water",
+    "featured": true,
+    "difficulty": "Easy"
   },
   {
     "id": 2,
     "title": "Chiang Mai",
     "location": "Thailand",
-    "duration": "1 Week",
-    "price": 490,
+    "duration": 5,
+    "price": 970,
     "oldPrice": null,
     "sale": false,
+    "category": "Heritage Tours",
+    "categoryColor": "#4B76FF",
+    "rating": 4.9,
+    "reviewsCount": 203,
     "image": "tour-card/Chiang Mai.png",
+    "shortDescription": "Visit the temples and the Chiang Mai Night Bazaar.",
     "description": "Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.",
-    "typology": "adventure"
+    "difficulty": "Medium"
   },
   {
     "id": 3,
     "title": "Bangkok",
     "location": "Thailand",
-    "duration": "10 Days",
+    "duration": 6,
     "price": 1000,
     "oldPrice": 1023,
     "sale": true,
+    "category": "Culinary Tourism",
+    "categoryColor": "#3CBF57",
+    "rating": 4.7,
+    "reviewsCount": 156,
     "image": "tour-card/Bangkok.png",
+    "shortDescription": "Thai capital.",
     "description": "Marvelous culinary and cultural trip to the Thai capital with its wonderful monuments and Buddha statues.",
-    "typology": "city"
+    "difficulty": "Easy"
   },
   {
     "id": 4,
@@ -43,9 +60,10 @@
     "price": 1150,
     "oldPrice": 1280,
     "sale": true,
-    "image": "tour-card/Paris.png",
-    "description": "Romantic trip through the City of Lights, with visits to the Eiffel Tower, Louvre Museum and charming cafés.",
-    "typology": "city"
+    "image": "tour-card/paris.jpg",
+    "description": "Romantic trip through the City of Lights.",
+    "typology": "Cultural Tours",
+    "difficulty": "Easy"
   },
   {
     "id": 5,
@@ -55,9 +73,10 @@
     "price": 990,
     "oldPrice": null,
     "sale": false,
-    "image": "tour-card/Nice.png",
-    "description": "Relax along the beautiful Azure Coast, explore old towns, beaches and the Mediterranean lifestyle.",
-    "typology": "beach"
+    "image": "tour-card/riviera.jpeg",
+    "description": "Relax along the beautiful Azure Coast.",
+    "typology": "Beach Holidays",
+    "difficulty": "Easy"
   },
   {
     "id": 6,
@@ -67,9 +86,10 @@
     "price": 860,
     "oldPrice": 910,
     "sale": true,
-    "image": "tour-card/Lyon.png",
-    "description": "Discover the medieval architecture, delicious cuisine and unique cultural atmosphere of Lyon.",
-    "typology": "culture"
+    "image": "tour-card/lyon.jpg",
+    "description": "Discover the medieval architecture and cuisine of Lyon.",
+    "typology": "Heritage Tours",
+    "difficulty": "Medium"
   },
   {
     "id": 7,
@@ -77,9 +97,10 @@
     "location": "USA",
     "duration": "4 Days",
     "price": 780,
-    "image": "assets/img/malibu.jpg",
+    "image": "tour-card/malibu.jpg",
     "description": "Enjoy beaches, surfing and coastal luxury.",
-    "typology": "beach"
+    "typology": "Sports Activities",
+    "difficulty": "Difficult"
   },
   {
     "id": 8,
@@ -87,9 +108,10 @@
     "location": "Japan",
     "duration": "6 Days",
     "price": 1250,
-    "image": "assets/img/tokyo.jpg",
-    "description": "Experience futuristic city life, tech districts and nightlife.",
-    "typology": "city"
+    "image": "tour-card/tokyo.jpg",
+    "description": "Experience futuristic city life.",
+    "typology": "Adventure Travel",
+    "difficulty": "Medium"
   },
   {
     "id": 9,
@@ -97,9 +119,10 @@
     "location": "France",
     "duration": "5 Days",
     "price": 1100,
-    "image": "assets/img/azure-coast.jpg",
+    "image": "tour-card/azurecoast.jpg",
     "description": "Sunny beaches and charming Mediterranean towns.",
-    "typology": "beach"
+    "typology": "Family-Friendly",
+    "difficulty": "Easy"
   },
   {
     "id": 10,
@@ -107,9 +130,10 @@
     "location": "France",
     "duration": "3 Days",
     "price": 620,
-    "image": "assets/img/rocamadour.jpg",
+    "image": "tour-card/rocamadour.jpg",
     "description": "Historic cliffside village with medieval beauty.",
-    "typology": "culture"
+    "typology": "Heritage Tours",
+    "difficulty": "Medium"
   },
   {
     "id": 11,
@@ -117,9 +141,10 @@
     "location": "Egypt",
     "duration": "6 Days",
     "price": 850,
-    "image": "assets/img/luxor.jpg",
-    "description": "Explore Valley of the Kings and ancient temples.",
-    "typology": "history"
+    "image": "tour-card/luxor.jpg",
+    "description": "Explore Valley of the Kings.",
+    "typology": "Heritage Tours",
+    "difficulty": "Difficult"
   },
   {
     "id": 12,
@@ -127,9 +152,10 @@
     "location": "Egypt",
     "duration": "4 Days",
     "price": 770,
-    "image": "assets/img/cairo.jpg",
-    "description": "See the pyramids, Sphinx and traditional bazaars.",
-    "typology": "history"
+    "image": "tour-card/cairo.jpg",
+    "description": "See the pyramids and Sphinx.",
+    "typology": "Heritage Tours",
+    "difficulty": "Medium"
   },
   {
     "id": 13,
@@ -137,21 +163,23 @@
     "location": "Italy",
     "duration": "7 Days",
     "price": 1350,
-    "image": "assets/img/tuscany.jpg",
-    "description": "Wine tasting, countryside views and medieval cities.",
-    "typology": "culture"
+    "image": "tour-card/tuscany.jpg",
+    "description": "Wine tasting and countryside views.",
+    "typology": "Culinary Tourism",
+    "difficulty": "Easy"
   },
   {
     "id": 14,
-    "title": "Santorini Escape",
-    "location": "Greece",
+    "title": "Santa Monica",
+    "location": "California",
     "duration": "6 Days",
     "price": 980,
     "oldPrice": 1120,
     "sale": true,
-    "image": "tour-card/Greece.jpg",
-    "description": "Enjoy breathtaking sunsets, white-washed villages, crystal-blue waters and the iconic Caldera views of Santorini.",
-    "typology": "beach"
+    "image": "tour-card/santamonica.jpg",
+    "description": "Crystal-blue waters and sunsets.",
+    "typology": "Beach Holidays",
+    "difficulty": "Easy"
   },
   {
     "id": 15,
@@ -162,8 +190,9 @@
     "oldPrice": null,
     "sale": false,
     "image": "tour-card/Egypt.jpg",
-    "description": "Discover ancient wonders, Mediterranean beaches, the Citadel of Qaitbay and historic libraries of Alexandria.",
-    "typology": "history"
+    "description": "Mediterranean beaches and ancient wonders.",
+    "typology": "Budget Travel",
+    "difficulty": "Medium"
   },
   {
     "id": 16,
@@ -174,8 +203,9 @@
     "oldPrice": 1580,
     "sale": true,
     "image": "tour-card/South Africa.jpg",
-    "description": "Experience Table Mountain, wildlife safaris, beaches and cultural hotspots in vibrant Cape Town.",
-    "typology": "adventure"
+    "description": "Table Mountain and wildlife safaris.",
+    "typology": "Eco-tourism",
+    "difficulty": "Challenging"
   },
   {
     "id": 17,
@@ -186,7 +216,8 @@
     "oldPrice": null,
     "sale": false,
     "image": "tour-card/Provence France.jpg",
-    "description": "Explore lavender fields, vineyards, charming villages and the warm Mediterranean atmosphere of Provence.",
-    "typology": "culture"
+    "description": "Lavender fields and vineyards.",
+    "typology": "Road Trips",
+    "difficulty": "Easy"
   }
 ]

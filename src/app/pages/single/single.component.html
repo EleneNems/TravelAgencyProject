@@ -1,15 +1,19 @@
-<app-header></app-header>
-
-<div *ngIf="tour; else loading">
+<div class="tour-detail" *ngIf="tour">
   <h1>{{ tour.title }}</h1>
-  <img *ngIf="tour.image" [src]="tour.image" alt="{{ tour.title }}" style="max-width:100%;height:auto;" />
-  <p>{{ tour.description }}</p>
-  <p><strong>Duration:</strong> {{ tour.duration }}</p>
-  <p><strong>Price:</strong> ${{ tour.price }}</p>
+
+  <img [src]="tour.image" alt="{{ tour.title }}">
+
+  <p class="location">{{ tour.location }}</p>
+
+  <div class="price-box">
+    <span class="price">${{ tour.price }}</span>
+    <span class="old-price" *ngIf="tour.sale">{{ tour.oldPrice }}</span>
+  </div>
+
+  <p class="desc">{{ tour.description }}</p>
+
+  <h3>Gallery</h3>
+  <div class="gallery" *ngIf="tour.gallery?.length">
+    <img *ngFor="let img of tour.gallery" [src]="img" />
+  </div>
 </div>
-
-<ng-template #loading>
-  <p>Loading tour details...</p>
-</ng-template>
-
-<app-footer></app-footer>

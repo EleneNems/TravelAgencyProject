@@ -1,11 +1,142 @@
-<app-header></app-header>
+<div class="search-page">
+  <div class="hero" *ngIf="featuredTour">
+    <img [src]="featuredTour.image" alt="{{ featuredTour.title }}" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Our Packages</h1>
+    </div>
+  </div>
 
-<app-search-bar (search)="doSearch($event)"></app-search-bar>
+  <div class="container">
+    <aside class="filters">
+      <div class="filter-block">
+        <label class="label">Search by name :</label>
+        <input
+          type="text"
+          [(ngModel)]="searchQuery"
+          (ngModelChange)="onFilterChange()"
+          placeholder="Search title or location"
+        />
+      </div>
+      <hr />
 
-<div class="results">
-  <div *ngFor="let tour of results">
-    <p>{{ tour.title }} - ${{ tour.price }}</p>
+      <div class="filter-block">
+        <label class="label">Select your destination :</label>
+        <select [(ngModel)]="selectedDestination" (ngModelChange)="onFilterChange()">
+          <option value="All">All Destinations</option>
+          <option *ngFor="let d of destinations" [value]="d">{{ d }}</option>
+        </select>
+      </div>
+      <hr />
+
+      <div class="filter-block">
+        <label class="label">Typologies :</label>
+        <div class="checkboxes">
+          <label *ngFor="let c of categories" class="chk">
+            <input type="checkbox" [checked]="isCategorySelected(c)" (change)="toggleCategory(c)" />
+            {{ c }}
+          </label>
+        </div>
+      </div>
+      <hr />
+
+      <div class="filter-block">
+        <label class="label"
+          >Max Price : <strong>{{ priceRange }}</strong></label
+        >
+        <input
+          type="range"
+          [min]="0"
+          [max]="priceMax"
+          [(ngModel)]="priceRange"
+          (ngModelChange)="onFilterChange()"
+        />
+      </div>
+      <div class="filter-block inline">
+        <label
+          ><input type="checkbox" [(ngModel)]="saleOnly" (ngModelChange)="onFilterChange()" /> See
+          only Promotions</label
+        >
+      </div>
+      <hr />
+
+      <div class="filter-block">
+        <label class="label">Durations :</label>
+        <div class="checkboxes">
+          <label *ngFor="let d of durationsFilterOptions" class="chk">
+            <input
+              type="checkbox"
+              [checked]="isDurationSelected(d.label)"
+              (change)="toggleDuration(d.label)"
+            />
+            {{ d.label }}
+          </label>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="filter-block">
+        <label class="label">Difficulty :</label>
+        <div class="checkboxes">
+          <label class="chk">
+            <input
+              type="checkbox"
+              (change)="toggleDifficulty('Easy')"
+              [checked]="isDifficultySelected('Easy')"
+            />
+            Easy
+          </label>
+          <label class="chk">
+            <input
+              type="checkbox"
+              (change)="toggleDifficulty('Medium')"
+              [checked]="isDifficultySelected('Medium')"
+            />
+            Medium
+          </label>
+          <label class="chk">
+            <input
+              type="checkbox"
+              (change)="toggleDifficulty('Difficult')"
+              [checked]="isDifficultySelected('Difficult')"
+            />
+            Difficult
+          </label>
+          <label class="chk">
+            <input
+              type="checkbox"
+              (change)="toggleDifficulty('Challenging')"
+              [checked]="isDifficultySelected('Challenging')"
+            />
+            Challenging
+          </label>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="filter-actions">
+        <button (click)="resetFilters()">Reset</button>
+      </div>
+    </aside>
+
+    <main class="results">
+      <div class="grid">
+        <ng-container *ngFor="let tour of pagedTours; let i = index">
+          <app-tour-card [tour]="tour" [index]="pageStart + i"></app-tour-card>
+        </ng-container>
+      </div>
+
+      <div class="pagination" *ngIf="totalPages > 1">
+        <button
+          *ngFor="let p of [].constructor(totalPages); let i = index"
+          [class.active]="currentPage === i + 1"
+          (click)="goToPage(i + 1)"
+        >
+          {{ i + 1 }}
+        </button>
+      </div>
+    </main>
   </div>
 </div>
-
-<app-footer></app-footer>

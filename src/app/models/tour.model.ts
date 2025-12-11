@@ -2,12 +2,18 @@ export interface Tour {
   id: number;
   title: string;
   location: string;
-  duration: string;
+  duration: number;
   price: number;
   oldPrice?: number | null;
   sale?: boolean;
-  image?: string;
+  category: string;
+  categoryColor: string;
+  rating: number;
+  reviewsCount: number;
+  image: string;
+  gallery?: string[];
+  shortDescription: string;
   description?: string;
-  typology?: string;
-  color?: string;
+  featured?: boolean;
+  difficulty?: string;
 }

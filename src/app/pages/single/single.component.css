@@ -1,0 +1,33 @@
+.tour-detail {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.tour-detail img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.price-box {
+  margin: 10px 0;
+  font-size: 22px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  margin-left: 10px;
+  opacity: 0.6;
+}
+
+.gallery {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 180px;
+  border-radius: 8px;
+}

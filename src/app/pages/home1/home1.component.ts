@@ -42,7 +42,7 @@ export class Home1Component implements OnInit {
     fetch('assets/data/tours.json')
       .then(res => res.json())
       .then((data: Tour[]) => {
-        this.destinations = data.filter(t => [14, 15, 16, 17].includes(t.id));
+        this.destinations = data.filter(t => [13, 15, 16, 17].includes(t.id));
       });
   }
 

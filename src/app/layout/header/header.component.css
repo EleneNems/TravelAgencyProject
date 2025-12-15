@@ -1,23 +1,19 @@
 .header {
   width: 100%;
   box-sizing: border-box;
-  padding: 20px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   box-shadow: 0 1px 4px #0001;
   position: relative;
+  height: 80px;
   overflow-x: hidden;
 }
 
 nav {
   display: flex;
   gap: 50px;
-  margin-left: -65px;
 }
 
 nav a {
@@ -26,6 +22,7 @@ nav a {
   color: #333;
   font-weight: 500;
   transition: 0.2s;
+  margin-top: 9px;
 }
 
 nav a.active {
@@ -34,8 +31,6 @@ nav a.active {
 }
 
 .search-btn {
-  position: absolute;
-  right: 140px;
   background: #1BBC9B;
   color: #fff;
   border: none;
@@ -47,11 +42,43 @@ nav a.active {
   transition: 0.2s ease;
 }
 
-.search-btn:hover {
+.search-btn:hover, .right img:hover {
   opacity: 0.85;
 }
 
 .dec {
   color: #1BBC9B;
   font-weight: bolder;
+  margin-top: 9px;
+}
+
+.content{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1200px;
+}
+
+.search-btn a{
+  text-decoration: none;
+  color: white;
+}
+
+.right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right img{
+  width: 35px;
+  height: auto;
+  background-color: #1BBC9B;
+  border-radius: 8px;
+  padding: 5px;
+  box-sizing: border-box;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
 }

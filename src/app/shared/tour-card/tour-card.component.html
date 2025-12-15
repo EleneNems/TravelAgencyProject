@@ -1,4 +1,8 @@
-<div class="tour-card" [ngClass]="themeClass">
+<div
+  class="tour-card"
+  [ngClass]="themeClass"
+  [ngStyle]="{ width: cardWidth }"
+>
   <div class="sale-badge" *ngIf="tour?.sale">SALE</div>
 
   <div class="card-image">

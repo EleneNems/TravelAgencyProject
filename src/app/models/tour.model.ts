@@ -16,4 +16,5 @@ export interface Tour {
   description?: string;
   featured?: boolean;
   difficulty?: string;
+  longDescription: string;
 }

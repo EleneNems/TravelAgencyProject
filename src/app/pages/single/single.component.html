@@ -1,19 +1,290 @@
-<div class="tour-detail" *ngIf="tour">
-  <h1>{{ tour.title }}</h1>
+<div class="single-page" *ngIf="activeTour">
+  <div class="slider">
+    <button class="nav left" (click)="prev()">‹</button>
 
-  <img [src]="tour.image" alt="{{ tour.title }}">
+    <div class="slider-window">
+      <div class="slider-track" [style.transform]="translateX">
+        <div
+          class="slide"
+          *ngFor="let tour of tours; let i = index"
+          [class.active]="i === selectedIndex"
+          (click)="selectTour(i)"
+        >
+          <img [src]="tour.image" [alt]="tour.title" />
+        </div>
+      </div>
+    </div>
 
-  <p class="location">{{ tour.location }}</p>
-
-  <div class="price-box">
-    <span class="price">${{ tour.price }}</span>
-    <span class="old-price" *ngIf="tour.sale">{{ tour.oldPrice }}</span>
+    <button class="nav right" (click)="next()">›</button>
   </div>
 
-  <p class="desc">{{ tour.description }}</p>
+  <div class="tour-header">
+    <div class="text">
+      <h1>{{ activeTour.title }}</h1>
+      <p class="location">
+        <img src="tour-card\icons\green\destination.png" alt="" />
+        {{ activeTour.location }}
+      </p>
+    </div>
 
-  <h3>Gallery</h3>
-  <div class="gallery" *ngIf="tour.gallery?.length">
-    <img *ngFor="let img of tour.gallery" [src]="img" />
+    <div class="meta">
+      <div>
+        <div>
+          <div class="greenBG">
+            <img src="single/icons/time.png" alt="" />
+          </div>
+        </div>
+        <div class="column">
+          <span>Duration</span>
+          <strong>{{ activeTour.duration }} Days</strong>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <div class="greenBG">
+            <img src="single/icons/road.png" alt="" />
+          </div>
+        </div>
+
+        <div class="column">
+          <span>Difficulty</span>
+          <strong>{{ activeTour.difficulty }}</strong>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <div class="greenBG">
+            <img src="single/icons/human.png" alt="" />
+          </div>
+        </div>
+
+        <div class="column">
+          <span>Min Age</span>
+          <strong>0</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content" *ngIf="activeTour">
+  <div class="left">
+    <h2>Enjoy the Adventure</h2>
+    <p>{{ activeTour.longDescription }}</p>
+    <div class="included-excluded">
+      <h3>Included / Excluded</h3>
+      <p class="subtitle">
+        To help you plan your trip, we have put together a list of what's included and what's not
+        included in your tour package. This will give you a clear understanding of what to expect
+        and help you make any necessary arrangements before your journey begins.
+      </p>
+
+      <div class="lists-container">
+        <div class="list-column">
+          <div class="list-item included">
+            <span class="icon">✓</span>
+            <span>Train tickets and Bus transportation</span>
+          </div>
+          <div class="list-item included">
+            <span class="icon">✓</span>
+            <span>Breakfast, lunch, and dinner.</span>
+          </div>
+          <div class="list-item included">
+            <span class="icon">✓</span>
+            <span>Accommodation at hotel</span>
+          </div>
+          <div class="list-item included">
+            <span class="icon">✓</span>
+            <span>Professional tour guide</span>
+          </div>
+        </div>
+
+        <div class="list-column">
+          <div class="list-item included">
+            <span class="icon">✓</span>
+            <span>Transfers between destinations</span>
+          </div>
+          <div class="list-item included">
+            <span class="icon">✓</span>
+            <span>Travel insurance</span>
+          </div>
+          <div class="list-item excluded">
+            <span class="icon">✕</span>
+            <span>Entrance fees to museums</span>
+          </div>
+          <div class="list-item excluded">
+            <span class="icon">✕</span>
+            <span>Custom itinerary</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tour Map Section -->
+    <div class="tour-map">
+      <h3>Tour Map</h3>
+      <p class="subtitle">
+        This comprehensive map is designed to guide you through an exciting journey filled with
+        remarkable destinations and captivating experiences.
+      </p>
+      <div class="map-container">
+        <iframe
+          [src]="getMapUrl(activeTour.location, activeTour.title)"
+          width="100%"
+          height="400"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </div>
+    </div>
+
+    <div class="itinerary">
+      <h3>Itinerary</h3>
+      <p class="subtitle">
+        We have carefully planned out each day to give you the best possible experience. From
+        exploring historic landmarks to tasting delicious local cuisine, each day is packed with
+        adventure and excitement. Join us as we take you on a journey through some of the most
+        fascinating destinations in the world.
+      </p>
+      <div class="itinerary-list">
+        <div class="itinerary-item">
+          <div class="itinerary-header">
+            <span class="day-label">DAY 1</span>
+            <span class="day-title">- Arrival and Orientation</span>
+          </div>
+          <button class="expand-btn">›</button>
+        </div>
+        <div class="itinerary-item">
+          <div class="itinerary-header">
+            <span class="day-label">DAY 2</span>
+            <span class="day-title">- City Tour</span>
+          </div>
+          <button class="expand-btn">›</button>
+        </div>
+        <div class="itinerary-item">
+          <div class="itinerary-header">
+            <span class="day-label">DAY 3</span>
+            <span class="day-title">- Cooking Class</span>
+          </div>
+          <button class="expand-btn">›</button>
+        </div>
+        <div class="itinerary-item">
+          <div class="itinerary-header">
+            <span class="day-label">DAY 4</span>
+            <span class="day-title">- Nature Hike</span>
+          </div>
+          <button class="expand-btn">›</button>
+        </div>
+        <div class="itinerary-item">
+          <div class="itinerary-header">
+            <span class="day-label">DAY 5</span>
+            <span class="day-title">- Free Day</span>
+          </div>
+          <button class="expand-btn">›</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery-section">
+      <h3>Gallery</h3>
+      <p class="subtitle">
+        Each image tells a unique story, inviting us into a world of emotion, beauty, and
+        complexity. Get ready to be moved, inspired, and challenged as we journey through this
+        captivating collection of images.
+      </p>
+      <div class="gallery-grid">
+        <div class="gallery-item" *ngFor="let tour of tours.slice(0, 6)">
+          <img [src]="tour.image" [alt]="tour.title" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="booking">
+    <div class="price-section">
+      <div class="price-label">Price</div>
+      <div class="price-display">
+        <span class="from">From</span>
+        <span class="price">$ {{ activeTour.price }}</span>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active">Booking Form</button>
+      <button class="tab">Enquiry Form</button>
+    </div>
+
+    <div class="booking-form">
+      <div class="form-group">
+        <label>Date</label>
+        <div class="date-value">{{ formattedDate }}</div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group-header">
+          <div>
+            <label>Adults</label>
+            <div class="counter-info">Over 18 ( $ {{ activeTour.price }} )</div>
+          </div>
+          <div class="counter">
+            <button class="counter-btn" (click)="decrementAdults()">-</button>
+            <span class="counter-value">{{ adults }}</span>
+            <button class="counter-btn" (click)="incrementAdults()">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group-header">
+          <div>
+            <label>Children</label>
+            <div class="counter-info">Under 18 ( $ {{ getChildPrice() }} )</div>
+          </div>
+          <div class="counter">
+            <button class="counter-btn" (click)="decrementChildren()">-</button>
+            <span class="counter-value">{{ children }}</span>
+            <button class="counter-btn" (click)="incrementChildren()">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Extra Services</label>
+        <div class="extra-info">Add extra services on your reservation</div>
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" [(ngModel)]="healthInsurance" />
+            <span>Health Insurance ( $ 220 )</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" [(ngModel)]="medicalInsurance" />
+            <span>Medical Insurance ( $ 45 )</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <button class="book-btn">BOOK NOW FOR $ {{ getTotalPrice() }}</button>
+  </div>
+</div>
+
+<div class="packages-section">
+  <div class="packages-header">
+    <span class="check-all">Check All</span>
+    <h2>Packages</h2>
+  </div>
+
+  <div class="packages-grid">
+    <app-tour-card
+      *ngFor="let tour of getRandomTours()"
+      [tour]="tour"
+      [themeClass]="'theme-green'"
+      cardWidth="380px"
+    >
+    </app-tour-card>
   </div>
 </div>

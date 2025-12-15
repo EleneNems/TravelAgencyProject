@@ -22,6 +22,7 @@ export class TourCardComponent implements OnChanges {
 
   @Input() public tour: Tour | null = null;
   @Input() public index: number = 0;
+  @Input() cardWidth = '420px';
 
   readonly colors = ["aqua", "green", "purple", "red"];
 

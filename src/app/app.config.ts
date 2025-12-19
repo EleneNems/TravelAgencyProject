@@ -8,19 +8,20 @@ import { SingleComponent } from './pages/single/single.component';
 import { SearchComponent } from './pages/search/search.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AuthComponent } from './pages/auth/auth.component';
-
+import { ContactComponent } from './pages/contact/contact.component';
 const routes = [
   { path: '', component: Home1Component },
   { path: 'tour/:id', component: SingleComponent },
   { path: 'search', component: SearchComponent },
   { path: 'about', component: AboutComponent },
   { path: 'auth', component: AuthComponent },
-  { path: '**', redirectTo: '' } // fallback route
+  { path: 'contact', component: ContactComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),  // 👈 pass the actual routes array
+    provideRouter(routes),
     provideHttpClient(),
     provideAnimations()
   ]

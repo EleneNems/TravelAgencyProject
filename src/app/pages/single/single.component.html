@@ -121,7 +121,6 @@
       </div>
     </div>
 
-    <!-- Tour Map Section -->
     <div class="tour-map">
       <h3>Tour Map</h3>
       <p class="subtitle">
@@ -188,7 +187,6 @@
       </div>
     </div>
 
-    <!-- Gallery Section -->
     <div class="gallery-section">
       <h3>Gallery</h3>
       <p class="subtitle">
@@ -213,15 +211,16 @@
       </div>
     </div>
 
-    <div class="tabs">
-      <button class="tab active">Booking Form</button>
-      <button class="tab">Enquiry Form</button>
-    </div>
-
     <div class="booking-form">
+      <div class="tabs">
+        <button class="tab active">Booking Form</button>
+        <button class="tab">Enquiry Form</button>
+      </div>
+
       <div class="form-group">
         <label>Date</label>
-        <div class="date-value">{{ formattedDate }}</div>
+        <input type="date" [(ngModel)]="bookingFrom" />
+        <input type="date" [(ngModel)]="bookingTo" />
       </div>
 
       <div class="form-group">
@@ -268,7 +267,8 @@
       </div>
     </div>
 
-    <button class="book-btn">BOOK NOW FOR $ {{ getTotalPrice() }}</button>
+    <button class="book-btn" (click)="bookTour()">BOOK NOW FOR $ {{ getTotalPrice() }}</button>
+    <div *ngIf="bookingSuccess" style="margin-top: 15px; color: #1BBC9B">Booking confirmed!</div>
   </div>
 </div>
 

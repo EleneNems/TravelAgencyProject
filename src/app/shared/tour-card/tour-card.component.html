@@ -3,16 +3,16 @@
   [ngClass]="themeClass"
   [ngStyle]="{ width: cardWidth }"
 >
-  <div class="sale-badge" *ngIf="tour?.sale">SALE</div>
+  <div class="sale-badge" *ngIf="displayTour?.sale">SALE</div>
 
   <div class="card-image">
-    <img [src]="tour?.image" alt="{{ tour?.title }}" />
+    <img [src]="displayTour?.image" alt="{{ displayTour?.title }}" />
   </div>
 
   <div class="card-info">
     <div class="duration">
       <img [src]="'tour-card/icons/' + themeClass.replace('theme-', '') + '/time.png'" alt="time" />
-      {{ tour?.duration }}
+      {{ displayTour?.duration }}
     </div>
 
     <div class="icons">
@@ -24,24 +24,24 @@
     </div>
   </div>
 
-  <h2>{{ tour?.title }}</h2>
+  <h2>{{ displayTour?.title }}</h2>
 
   <div class="location">
     <img
       [src]="'tour-card/icons/' + themeClass.replace('theme-', '') + '/destination.png'"
       alt="destination"
     />
-    {{ tour?.location }}
+    {{ displayTour?.location }}
   </div>
   <hr />
-  <p class="desc">{{ tour?.description }}</p>
+  <p class="desc">{{ displayTour?.description }}</p>
   <hr />
   <div class="bottom">
     <button class="details-btn" (click)="go()">Details</button>
 
     <div class="price">
-      <br><span class="new">${{ tour?.price }}</span>
-      <span class="old" *ngIf="tour?.sale">${{ tour?.oldPrice }}</span>
+      <br><span class="new">${{ displayTour?.price }}</span>
+      <span class="old" *ngIf="tour?.sale">${{ displayTour?.oldPrice }}</span>
     </div>
   </div>
 </div>

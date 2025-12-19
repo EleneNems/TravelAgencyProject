@@ -1,33 +1,41 @@
-<app-header></app-header>
+<div class="auth-wrapper">
+  <div class="auth-container">
+    <div class="auth-icon">
+      <img *ngIf="mode === 'login'" src="/auth/travel-luggage.png" alt="Login icon" />
 
-<div class="auth-container">
-  <h2>{{ mode === 'login' ? 'Login' : 'Register' }}</h2>
-  <form [formGroup]="form" (ngSubmit)="submit()">
-    <div *ngIf="mode === 'register'">
-      <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
-        <input matInput formControlName="name" placeholder="Full Name" />
-      </mat-form-field>
+      <img *ngIf="mode === 'register'" src="/auth/flight.png" alt="Register icon" />
     </div>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput formControlName="email" placeholder="Email" />
-    </mat-form-field>
+    <h2>{{ mode === 'login' ? 'Welcome Back!' : 'Join the Adventure' }}</h2>
+    <p class="subtitle">
+      {{ mode === 'login' ? 'Sign in to continue your journey' : 'Create your travel account' }}
+    </p>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <input matInput formControlName="password" placeholder="Password" type="password" />
-    </mat-form-field>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div *ngIf="mode === 'register'">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="Full Name" />
+        </mat-form-field>
+      </div>
 
-    <button mat-raised-button color="primary" type="submit">
-      {{ mode === 'login' ? 'Login' : 'Register' }}
-    </button>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Email" />
+      </mat-form-field>
 
-    <button mat-button type="button" (click)="toggle()">
-      {{ mode === 'login' ? 'Switch to Register' : 'Switch to Login' }}
-    </button>
-  </form>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" placeholder="Password" type="password" />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" class="submit-btn">
+        {{ mode === 'login' ? 'Login' : 'Register' }}
+      </button>
+
+      <button mat-button type="button" (click)="toggle()" class="toggle-btn">
+        {{ mode === 'login' ? 'New here? Create an account' : 'Already have an account? Sign in' }}
+      </button>
+    </form>
+  </div>
 </div>
-
-<app-footer></app-footer>

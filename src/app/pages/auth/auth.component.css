@@ -1,11 +1,188 @@
-.auth-container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+.auth-wrapper {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
 }
+
+.auth-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.auth-container {
+  max-width: 420px;
+  width: 100%;
+  height: 650px;
+  padding: 40px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 40px;
+  animation: bounce 2s ease-in-out infinite;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.auth-container h2 {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  font-size: 28px;
+  color: #2d3748;
+  background: linear-gradient(135deg, #1BBC9B 0%, #14B9D5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  margin: 0 0 32px 0;
+  color: #718096;
+  font-size: 15px;
+}
+
 mat-form-field {
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+::ng-deep .auth-container .mat-mdc-text-field-wrapper {
+  background: #f7fafc;
+  border-radius: 12px;
+}
+
+::ng-deep .auth-container .mdc-notched-outline__leading,
+::ng-deep .auth-container .mdc-notched-outline__notch,
+::ng-deep .auth-container .mdc-notched-outline__trailing {
+  border-color: #e2e8f0 !important;
+  border-width: 2px !important;
+}
+
+::ng-deep .auth-container .mat-mdc-form-field:hover .mdc-notched-outline__leading,
+::ng-deep .auth-container .mat-mdc-form-field:hover .mdc-notched-outline__notch,
+::ng-deep .auth-container .mat-mdc-form-field:hover .mdc-notched-outline__trailing {
+  border-color: #cbd5e0 !important;
+}
+
+::ng-deep .auth-container .mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+::ng-deep .auth-container .mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+::ng-deep .auth-container .mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+  border-color: #1BBC9B !important;
+  border-width: 2px !important;
+}
+
+::ng-deep .auth-container .mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+  color: #1BBC9B !important;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 50px;
+  margin-top: 8px;
+  background: linear-gradient(135deg, #1BBC9B 0%, #14B9D5 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(27, 188, 155, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(27, 188, 155, 0.4) !important;
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.toggle-btn {
+  margin-top: 16px !important;
+  color: #1BBC9B !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.toggle-btn:hover {
+  background: rgba(27, 188, 155, 0.08) !important;
+  transform: scale(1.02);
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 32px 24px;
+  }
+
+  .auth-container h2 {
+    font-size: 24px;
+  }
+
+  .auth-icon {
+    font-size: 48px;
+  }
 }

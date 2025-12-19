@@ -1,14 +1,34 @@
 import { Component } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  showMenu = false;
+
+  constructor(public auth: AuthService, private router: Router) {}
+
+  onProfileClick() {
+    if (this.auth.isAuthenticated()) {
+      this.showMenu = !this.showMenu;
+    } else {
+      this.router.navigate(['/auth']);
+    }
+  }
+
+  logout() {
+    this.showMenu = false;
+    this.auth.logout();
+  }
+
+  get userName() {
+    return this.auth.getUserName();
+  }
+}

@@ -353,6 +353,11 @@
   color: #333;
 }
 
+.form-group input[type="date"]{
+  width: 90%;
+  margin: 8px 0 8px 0;
+}
+
 .counter {
   display: flex;
   align-items: center;
@@ -428,7 +433,7 @@
 }
 
 .book-btn:hover {
-  background: #1fb96a;
+  background: #179d82;
 }
 
 /* Itinerary Section */

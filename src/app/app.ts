@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppComponent  // bootstrap your root standalone component
+    AppComponent 
   ],
   bootstrap: [AppComponent]
 })

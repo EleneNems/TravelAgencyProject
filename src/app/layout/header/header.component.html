@@ -7,17 +7,25 @@
       <span class="dec">:</span>
       <a routerLink="/tour/1" routerLinkActive="active">Tours</a>
       <span class="dec">:</span>
-
-      <a routerLink="/blog" routerLinkActive="active">About</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
       <span class="dec">:</span>
-
       <a routerLink="/contact" routerLinkActive="active">Contact</a>
     </nav>
 
     <div class="right">
       <button class="search-btn"><a routerLink="/search">Search</a></button>
 
-      <img src="header/profile.png" alt="" />
+      
+      <div class="profile-wrapper">
+        <img src="header/profile.png" alt="profile" (click)="onProfileClick()" />
+
+        <div class="profile-menu" *ngIf="showMenu && auth.isAuthenticated()">
+          <p>
+            Hello, <strong>{{ userName }}</strong>
+          </p>
+          <button (click)="logout()">Sign out</button>
+        </div>
+      </div>
     </div>
   </div>
 </header>
